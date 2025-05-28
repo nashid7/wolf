@@ -1,0 +1,248 @@
+=============================================================================
+                          SERIALCAMERA APPLICATION
+                      Technical Documentation & User Guide
+=============================================================================
+
+----------------------------------------
+TABLE OF CONTENTS
+----------------------------------------
+1. APPLICATION OVERVIEW
+2. KEY FEATURES
+3. TECHNICAL ARCHITECTURE
+4. USER GUIDE
+5. TECHNICAL REQUIREMENTS
+6. SECURITY FEATURES
+7. PRIVACY INFORMATION
+8. TECHNICAL SUPPORT
+9. RECENT UPDATES
+10. DEVELOPMENT NOTES
+
+=============================================================================
+1. APPLICATION OVERVIEW
+=============================================================================
+
+SerialCamera is a specialized Android camera application designed for quality 
+control, inspection, and documentation purposes. It allows users to capture 
+photos with automatically applied serial number overlays, making it ideal for 
+scenarios where visual records need to be tagged with identifying information.
+
+The app features a clean, modern user interface built with Jetpack Compose, 
+incorporating best practices in Android development and security.
+
+=============================================================================
+2. KEY FEATURES
+=============================================================================
+
+2.1. Core Functionality
+-----------------------
+* Serial Number Tagging: Every photo is automatically overlaid with a 
+  user-entered serial number in a white banner at the top.
+  
+* Customizable Identifiers: Users can enter serial numbers up to 10 characters, 
+  which are automatically converted to uppercase.
+  
+* Intuitive Camera Interface: Clean, modern camera UI with focus indicator, 
+  flash effect, and capture animation.
+  
+* Built-in Gallery: Users can review all captured images directly within 
+  the app.
+  
+* Organized File Storage: All images are saved to the device's Pictures folder 
+  with a consistent naming convention for easy sorting and retrieval.
+
+2.2. User Interface
+------------------
+* Modern Design: Built with Jetpack Compose, featuring a sleek dark theme with 
+  elegant animations and transitions.
+  
+* Distraction-Free Capture: Minimalist camera screen with essential controls only.
+
+* Splash Screen: Animated splash screen with app logo for a polished experience.
+
+* Responsive Layout: UI elements properly sized and positioned for optimal usability.
+
+2.3. Security Features
+---------------------
+* Enhanced Security: Multiple security checks to prevent unauthorized use:
+  - Rooted device detection
+  - Emulator detection
+  - Debugger detection
+  - Screen capture prevention
+  
+* Encryption Support: Built-in encryption utilities for sensitive data using 
+  Android Keystore.
+
+=============================================================================
+3. TECHNICAL ARCHITECTURE
+=============================================================================
+
+3.1. Core Components
+-------------------
+1. MainActivity: Primary activity managing camera functionality, image capture, 
+   and navigation.
+   
+2. SplashActivity: Entry point activity showing animated splash screen.
+
+3. ImageProcessor: Handles image manipulation, specifically adding serial number 
+   overlays to images.
+   
+4. CameraManager: Manages camera-related operations and permissions.
+
+5. SerialNumberManager: Handles storage and retrieval of serial numbers.
+
+6. SecurityUtils: Provides encryption and security-related utilities.
+
+3.2. UI Components
+-----------------
+1. CameraScreen: Main camera interface with controls for capturing images and 
+   accessing settings.
+   
+2. GalleryScreen: Grid display of captured images with preview capabilities.
+
+3. Serial Number Editor: Modal interface for entering and editing serial numbers.
+
+3.3. Key Technical Features
+--------------------------
+* Camera Implementation: Uses CameraX library for modern camera functionality.
+
+* Image Processing: Custom bitmap manipulation for adding text overlays to images.
+
+* Storage Management: Uses MediaStore API to properly save and catalog images.
+
+* Permission Handling: Comprehensive permission management for camera and 
+  storage access.
+  
+* Security Implementations: Multiple security layers to protect against 
+  unauthorized usage.
+
+=============================================================================
+4. USER GUIDE
+=============================================================================
+
+4.1. Getting Started
+-------------------
+1. Launch the app: Upon first launch, grant camera and storage permissions when 
+   prompted.
+   
+2. Enter a serial number: Tap the edit icon (pencil) at the top right to set 
+   your serial number.
+   
+3. Take photos: Press the large capture button at the bottom of the screen.
+
+4. View captured photos: Tap the gallery icon to browse your captured images.
+
+4.2. Serial Number Management
+----------------------------
+* Tap the edit (pencil) icon to open the serial number editor.
+
+* Enter up to 10 characters (automatically converted to uppercase).
+
+* Press "Done" to save the serial number.
+
+* The serial number will be automatically added to all photos you capture.
+
+4.3. Camera Features
+------------------
+* Tap to focus: Tap anywhere on the screen to focus the camera.
+
+* Image capture: Press the large white button at the bottom to take a photo.
+
+* Flash effect: A brief white flash indicates a successful capture.
+
+* Focus indicator: A circular indicator shows where the camera is focusing.
+
+4.4. Gallery Management
+---------------------
+* The gallery displays all captured images sorted by date (newest first).
+
+* Images are saved with the naming pattern: 
+  [SERIAL_NUMBER]_[FIRST_4_DIGITS]_[TIMESTAMP].jpg
+  
+* All images are stored in the device's Pictures folder, accessible through any 
+  file manager or gallery app.
+
+=============================================================================
+5. TECHNICAL REQUIREMENTS
+=============================================================================
+
+5.1. System Requirements
+----------------------
+* Operating System: Android 10 (API level 29) or higher
+
+* Camera: Device with camera and autofocus capability
+
+* Storage: At least 50MB of available storage space
+
+* Permissions: Camera access, Storage read/write permissions
+
+5.2. Dependencies
+---------------
+* AndroidX Core KTX
+* Jetpack Compose (UI framework)
+* CameraX (camera functionality)
+* Coil (image loading)
+* Android Security libraries (encryption)
+
+=============================================================================
+6. SECURITY FEATURES
+=============================================================================
+
+6.1. Anti-Tampering Measures
+--------------------------
+* Detection of rooted devices
+* Detection of emulator environments
+* Detection of debugger connections
+* Prevention of screen captures
+* Secure storage of sensitive information
+
+6.2. Data Security
+----------------
+* Images stored securely on device
+* No data transmitted to external servers
+* Encryption utilities for sensitive data
+
+=============================================================================
+7. PRIVACY INFORMATION
+=============================================================================
+
+SerialCamera respects user privacy by:
+* Only accessing camera and storage to provide core functionality
+* No data is transmitted from the device
+* All photos remain stored locally on the device
+* No user tracking or analytics implemented
+
+=============================================================================
+8. TECHNICAL SUPPORT
+=============================================================================
+
+For technical support or to report issues:
+1. Check the app's documentation for troubleshooting steps
+2. Contact the development team through the support channels
+3. Submit detailed issue reports including device information and steps to 
+   reproduce any problems
+
+=============================================================================
+9. RECENT UPDATES
+=============================================================================
+
+Recent improvements to the application include:
+* Enhanced UI with modern edit icon for serial number entry
+* Improved serial number overlay with larger text size
+* Centered text alignment for better readability
+* Increased white banner size for better visibility
+* Security enhancements and bug fixes
+
+=============================================================================
+10. DEVELOPMENT NOTES
+=============================================================================
+
+The application is built using:
+* Kotlin as the primary language
+* Jetpack Compose for UI
+* MVVM architecture principles
+* Modern Android development practices
+* Security-first approach to protect user data
+
+=============================================================================
+                            END OF DOCUMENT
+=============================================================================
